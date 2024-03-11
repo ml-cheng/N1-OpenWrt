@@ -1,0 +1,39 @@
+
+config interface 'loopback'
+	option device 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config globals 'globals'
+	option packet_steering '1'
+
+config interface 'lan'
+	option device 'eth0'
+	option proto 'static'
+	option netmask '255.255.255.0'
+	option ip6assign '60'
+	option delegate '0'
+	option ipaddr '192.168.1.2'
+
+config interface 'vpn0'
+	option device 'tun0'
+	option proto 'none'
+
+config interface 'docker'
+	option device 'docker0'
+	option proto 'none'
+	option auto '0'
+
+config device
+	option type 'bridge'
+	option name 'docker0'
+
+config interface 'wan'
+	option proto 'pppoe'
+	option device 'eth0'
+	option username '051086256255'
+	option password '147890'
+	option ipv6 '0'
+	option delegate '0'
+
