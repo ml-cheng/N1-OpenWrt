@@ -18,6 +18,7 @@ config dnsmasq
 	option ednspacket_max '1232'
 	option localuse '1'
 	option filter_aaaa '1'
+        list addnhosts '/etc/myhosts'
 
 config dhcp 'lan'
 	option interface 'lan'
